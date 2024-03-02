@@ -132,13 +132,13 @@ void sorts(int *arr, int len, int sortType)
 int main() 
 {
   srand(time(0)); /* for array generation */
-  int len = 1000;
+  int len = 0;
   for (len; len <= 2000; len += 50) {
     int arr[len];
 
-    for (int sortType = 3; sortType <= 3; ++sortType) {
+    for (int sortType = 2; sortType <= 2; ++sortType) {
       elapsed_seconds = std::chrono::system_clock::now() - std::chrono::system_clock::now();
-      int repeats = 100;
+      int repeats = 10000;
       for (int i = 0; i < repeats; ++i) {
         makeArray(arr, len);
         sorts(arr, len, sortType);
@@ -148,18 +148,21 @@ int main()
       //cout << ">>>>>" << sumT.count() << endl;
       if (sortType == 1) {
         //cout << "Bubble Sort" << endl << "Repeats=" << repeats << " " << "Time=";
-        elapsed_seconds /= 100;
-        cout << len << " >> " << elapsed_seconds.count() << endl;
+        elapsed_seconds /= 10000;
+        //cout << len << " >> " << elapsed_seconds.count() << endl;
+        cout << elapsed_seconds.count() << endl;
       } else if (sortType == 2) {
         //cout << "Quick Sort" << endl << "Repeats=" << repeats << " " << "Time=";
-        elapsed_seconds /= 100;
+        elapsed_seconds /= 10000;
         //cout << elapsed_seconds.count() << endl;
-        cout << len << " >> " << elapsed_seconds.count() << endl;
+        //cout << len << " >> " << elapsed_seconds.count() << endl;
+        cout << elapsed_seconds.count() << endl;
       } else if (sortType == 3) {
         //cout << "Heap Sort" << endl << "Repeats=" << repeats << " " << "Time=";
-        elapsed_seconds /= 100;
+        elapsed_seconds /= 10000;
         //cout << elapsed_seconds.count() << endl;
-        cout << len << " >> " << elapsed_seconds.count() << endl;
+        //cout << len << " >> " << elapsed_seconds.count() << endl;
+        cout << elapsed_seconds.count() << endl;
       } else { return 1; }
     }
 
