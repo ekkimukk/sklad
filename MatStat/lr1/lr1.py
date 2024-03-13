@@ -94,7 +94,7 @@ print("6. ТОЧЕЧНЫЕ ОЦЕНКИ ПАРАМЕТРОВ РАСПРЕДЕЛ�
 print("\n6.1 Выборочная средняя (Xv)")
 x_v_sred = 0
 for i in range(n_1_1):
-x_v_sred += array[i] #
+    x_v_sred += array[i] #
 x_v_sred /= n_1_1
 print("x_v_sred =", x_v_sred)
 
