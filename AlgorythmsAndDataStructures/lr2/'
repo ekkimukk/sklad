@@ -1,0 +1,46 @@
+#include <sys/time.h>
+#include <thread>
+#include <chrono>
+#include <time.h>
+#include <string>
+#include <iostream>
+#include <ctime>
+#include <cmath>
+#include <cstdlib>
+using namespace std;
+std::chrono::duration<double> elapsed_seconds;
+
+// Function to print an array
+void printArray(int arr[], int len)
+{
+  int i;
+  for (i = 0; i < len; i++)
+      cout << " " << arr[i];
+}
+
+
+// Function to generate the array
+string makeString(int size)
+{
+  string str = "";
+  string chars = "wigkh";
+  for (int i; i < size; ++i) {
+    str += chars[rand() % 5];
+  }
+  return str;
+}
+
+void finds(string str, int size, int findType)
+
+int main() 
+{
+  srand(time(0)); /* for array generation */
+    
+  for (int size = 20; size <= 2020; size += 100) {
+    str = makeString(size);
+
+  }
+
+
+  return 0;
+}

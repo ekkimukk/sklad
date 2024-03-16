@@ -21,18 +21,20 @@
 % Задача ЛП с ограничениями равенствами
 % Двойственная задача  z = [bT,hT]y → min, [AT,E]y >= c,  y4,5,6,7,8 >= 0  
 %  Исходная задача F = cTx → max, Ax=b, 0<=x<=u
-clc; close all; clear all; 
-c=[ 2; 1; 0; 0; 0]
-u=[35, 20, 60, 80, 35]
-b=[60; 80; 35]
-A=[7, 3, 1, 0, 0;
-   6, 9, 0, 1, 0;
-   1, 5, 0, 0, 1]
+clc; close all; clear all;
+c=[15;  3;  7;  5;  15; 23; 12; 0; 0; 0; 0; 0]
+u=[4,  40,  8,  16,  9,  121,  25,    63, 51, 44, 80, 121]
+b=[63; 51; 44; 80; 121]
+A=[-6,   9,   13,  18,  8,   21,  -6,  1, 0, 0, 0, 0;
+   25,   19,  -9,  -7,  25,  -6,   2,  0, 1, 0, 0, 0;
+   -7,   10,   5,   3,  25,  -2,  14,  0, 0, 1, 0, 0;
+   27,    2,  22,   5,  19,  -2,  15,  0, 0, 0, 1, 0;
+   25,   17,  22,  11,  13,   1,  25,  0, 0, 0, 0, 1;]
 fprintf('Решение задачи и значение целевой функции\n')   
-[Xopt,Fval] = glpk(c,A,b,[],u,'SSS','CCCCC',-1)
+[Xopt,Fval] = glpk(c,A,b,[],u,'SSSSS','CCCCCCCCCCCC',-1)
 fprintf('Решение задачи целочисленного программирования\n') 
-[Xopt,Fval] = glpk(c,[A;eye(5)],[b;u'],[],[],'SSSUUUUU','IIIII',-1)
+[Xopt,Fval] = glpk(c,[A;eye(12)],[b;u'],[],[],'SSSSSUUUUUUUUUUUU','IIIIIIIIIIII',-1)
 fprintf('Решение двойственной задачи\n')
-[Yopt,Zval,extra,redcosts] = glpk([b;u'],[A',eye(5)],c,[-Inf(1,3),zeros(1,5)],[],'LLLLL','CCCCCCCC')
+[Yopt,Zval,extra,redcosts] = glpk([b;u'],[A',eye(12)],c,[-Inf(1,5),zeros(1,12)],[],'LLLLLLLLLLLL','CCCCCCCCCCCCCCCCC')
 fprintf('Решение целочисленной двойственной задачи\n')
-[Yopt,Zval,extra,redcosts] = glpk([b;u'],[A',eye(5)],c,[-Inf(1,3),zeros(1,5)],[],'LLLLL','IIICCCCC')
+[Yopt,Zval,extra,redcosts] = glpk([b;u'],[A',eye(12)],c,[-Inf(1,5),zeros(1,12)],[],'LLLLLLLLLLLL','IIIIICCCCCCCCCCCC')

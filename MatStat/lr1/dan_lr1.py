@@ -71,7 +71,7 @@ intervalsMedian = [0] * m
 for i in range(len(intervalsCount)):
     for j in range(n):
         if (intervals[i] <= array[j] and array[j] <= intervals[i+1]):
-            intervalsCount[i] += 1
+            intervalsCount[i]  += 1
             intervalsMedian[i] += array[j]
 print(f"        n(i) = {intervalsCount}, ")
         
@@ -157,7 +157,7 @@ for i in range(len(nStrikh)):
     nStrikh[i] = n * p[i]
     print(f"      {nStrikh[i]}")
 
-print("8.6 Hахождение X^2 набл")
+print("  8.6 Hахождение X^2 набл")
 xNabl = 0
 for i in range(len(nStrikh)):
     xNabl += (intervalsCount[i] - nStrikh[i]) ** 2 / nStrikh[i]
