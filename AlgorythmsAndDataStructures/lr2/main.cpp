@@ -11,7 +11,7 @@
 using namespace std;
 std::chrono::duration<double> elapsed_seconds;
 
-// Function to print an array
+/* Function to print a string */
 void printString(int arr[], int len)
 {
   int i;
@@ -19,7 +19,7 @@ void printString(int arr[], int len)
       cout << " " << arr[i];
 }
 
-// Function to generate the array
+/* Function to generate a string */
 string makeString(int size)
 {
   string str = "";
@@ -30,7 +30,7 @@ string makeString(int size)
   return str;
 }
 
-// Function to generate the substring
+/* Function to generate the substring */
 string makeSubstring(int substringSize)
 {
   string substring = "";
@@ -41,7 +41,7 @@ string makeSubstring(int substringSize)
   return substring;
 }
 
-/* 1. Boyer-Meow string-search algorithm */
+/* 1. Boyer-Meow string-search algorithm (=^･ｪ･^=) */
 void BoyerMoore(string substring, int substringSize)
 {
   map<char, int> meowTable = {};
@@ -50,12 +50,13 @@ void BoyerMoore(string substring, int substringSize)
   }
 
   //cout << substring[i] << meowTable[substring[i]] << endl;
-
+  /* 
   for(map<string, pair<string,string> >::const_iterator it = meowTable.begin();
     it != meowTable.end(); ++it)
 {
     std::cout << it->first << " " << it->second.first << " " << it->second.second << "\n";
 }
+  */
 }
 
 void searches(string str, int size, int searchType)
@@ -74,14 +75,14 @@ void searches(string str, int size, int searchType)
   }
 }
 
-int main() 
+int main() /* (✿◠‿◠) */
 {
   srand(time(0)); /* for array generation */
 
   int substringSize = 5;
   string substring = makeSubstring(substringSize);
   cout << substring  << endl;
-    for (int size = 20; size <= 20; size += 100) {
+    for (int size = 20; size <= 20; size += 100) { /* [20; 2020] */
       string str = makeString(size);
       for (int searchType = 1; searchType <= 1; ++searchType) {
         BoyerMoore(substring, substringSize);

@@ -1,2 +1,2 @@
 all:
-	g++ main.cpp -o sorts.out && ./sorts.out
+	g++ main.cpp -o searches.out && ./searches.out

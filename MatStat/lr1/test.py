@@ -80,8 +80,11 @@ for i in range(len(intervalsCount)):
     print(f"        {round(intervalsCount[i] / n, 2)}")
 
 print("  4.3.4 Bеличины W/h")
+sum = 0
 for i in range(len(intervalsCount)):
     print(f"        {round(intervalsCount[i] / n / h, 3)}")
+    sum += round(intervalsCount[i] / n / h, 3)
+print(sum)
         
 print("  4.3.5 Середины частичных интервалов X(i)")
 Xi = [0] * m
@@ -107,7 +110,7 @@ print(f"     {disp}")
 
 print(" 6.3 Исправленная выборочнaя дисперсия")
 s = (n / (n - 1) * disp) ** 0.5
-print(f"     {s**2} ({s}^2)")
+print(f"     {s}")
 
 print("7. Интервальные оценки параметров распределения (y = 0.9)")
 print(" 7.1 Доверительный интервал для математического ожидания")
